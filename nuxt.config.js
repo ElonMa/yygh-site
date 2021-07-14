@@ -7,7 +7,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '好医通' }
+      { hid: 'description', name: 'description', content: '��ҽͨ' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -17,11 +17,9 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
-
-
-    plugins: [
-      { src: '~/plugins/myPlugin.js', ssr: false }
-    ],
+  plugins: [
+    { src: '~/plugins/myPlugin.js', ssr: false }
+  ],
   /*
   ** Build configuration
   */
@@ -39,8 +37,6 @@ module.exports = {
         })
       }
     }
-
-    
   }
 }
 

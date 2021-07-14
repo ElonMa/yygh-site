@@ -46,7 +46,7 @@
             <div>挂号信息</div>
           </div>
           <div class="info-form">
-            <el-form ref="form" :model="form">
+            <el-form ref="orderInfo" :model="orderInfo">
 
               <el-form-item label="就诊人信息：">
                 <div class="content"><span>{{ orderInfo.patientName }}</span></div>

@@ -133,7 +133,7 @@ export default {
       userInfo: {
         param: {}
       },
-
+      formData:"",
       submitBnt: '提交'
     }
   },

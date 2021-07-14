@@ -153,15 +153,15 @@ import hospitalApi from '@/api/hosp/hospital'
 import dictApi from '@/api/cmn/dict'
 export default {
   // asyncData：渲染组件之前异步获取数据
-  asyncData({ params, error }) {
-    return hospitalApi.getPageList(1, 10, null).then(response => {
-      console.log(response.data);
-      return {
-        list: response.data.content,
-        pages : response.data.totalPages
-      }
-    });
-  },
+  // asyncData({ params, error }) {
+  //   return hospitalApi.getPageList(1, 10, null).then(response => {
+  //     console.log(response.data);
+  //     return {
+  //       list: response.data.content,
+  //       pages : response.data.totalPages
+  //     }
+  //   });
+  // },
   data() {
     return {
       searchObj: {},
@@ -173,26 +173,14 @@ export default {
       districtList: [],
 
       hostypeActiveIndex: 0,
-      provinceActiveIndex: 0
+      provinceActiveIndex: 0,
+      list:[]
     }
   },
 
   created() {
     this.init()
   },
-
-  mounted() {
-    document.getElementById("search").style.display = 'none';
-
-    // 添加滚动事件，检测滚动到页面底部
-    window.addEventListener('scroll', this.load, true)
-  },
-
-  destroyed(){
-    // 页面关闭的同时，记得将这个监听器关闭，节省性能
-    window.removeEventListener('scroll', this.load, false)
-  },
-
   methods: {
     init() {
       dictApi.findByDictCode("Hostype").then(response => {

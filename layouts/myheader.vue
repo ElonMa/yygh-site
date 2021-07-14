@@ -1,19 +1,19 @@
 <template>
-    <div class="header-container">
-        <div class="wrapper">
-        <!-- logo -->
-            <div class="left-wrapper v-link selected">
-                <img style="width: 50px" width="50" height="50" src="~assets/images/logo.png">
-                <span class="text">医通 预约挂号统一平台</span>
-            </div>
-        <!-- 搜索框 -->
-        <div class="search-wrapper">
-            <div class="hospital-search animation-show">
+  <div class="header-container">
+    <div class="wrapper">
+      <!-- logo -->
+      <div class="left-wrapper v-link selected">
+        <img style="width: 50px" width="50" height="50" src="~assets/images/logo.png">
+        <span class="text">尚医通 预约挂号统一平台</span>
+      </div>
+      <!-- 搜索框 -->
+      <div class="search-wrapper">
+        <div class="hospital-search animation-show">
           <div id="search" style="display: block;">
             <el-autocomplete
               class="search-input"
               prefix-icon="el-icon-search"
-              v-model="hosname"
+              v-model="hostname"
               :fetch-suggestions="querySearchAsync"
               :trigger-on-focus="false"
               @select="handleSelect"
@@ -142,12 +142,13 @@ export default {
         code: '',
         openid: ''
       },
-      hosname: '',
+
       dialogUserFormVisible: false,
       // 弹出层相关属性
       dialogAtrr:defaultDialogAtrr,
 
-      name: '' // 用户登录显示的名称
+      name: '', // 用户登录显示的名称
+      hostname: ""
     }
   },
 
@@ -214,7 +215,7 @@ export default {
 
     // 登录
     login() {
-      debugger
+      //debugger
       this.userInfo.code = this.dialogAtrr.inputValue
 
       if(this.dialogAtrr.loginBtn == '正在提交...') {
@@ -358,6 +359,4 @@ export default {
     }
   }
 }
-
-
 </script>

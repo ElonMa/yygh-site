@@ -141,7 +141,7 @@ export default {
       // 登录判断
       let token = cookie.get('token')
       if (!token) {
-        loginEvent.$emit('loginDialogEvent')
+        //loginEvent.$emit('loginDialogEvent')
         return
       }
 
